@@ -10,8 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// nrTourism9360
-// hNCZ7n28fELStLG7
+
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.bhgag9l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -24,11 +23,29 @@ const client = new MongoClient(uri, {
   }
 });
 
+
+
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
 
+    const spotsCollection = client.db("spotsDB").collection("spots")
+
+    // send data
+    app.get('/spots', async(req, res)=>{
+        const curser = spotsCollection.find();
+        const result = await  curser.toArray();
+        res.send(result)
+    })
+
+    // crate data
+    app.post('/spots', async(req, res) =>{
+        const newSpots = req.body;
+        console.log(newSpots);
+        const result = await spotsCollection.insertOne(newSpots);
+        res.send(result)
+    })
 
 
     // Send a ping to confirm a successful connection
