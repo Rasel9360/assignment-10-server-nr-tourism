@@ -39,12 +39,15 @@ async function run() {
         res.send(result)
     })
 
+    // get data server side individual id
     app.get('/spots/:id', async(req, res)=>{
         const id =  req.params.id;
         const query = {_id : new ObjectId(id)};
         const result = await  spotsCollection.findOne(query);
         res.send(result)
     })
+
+    
 
     // crate data
     app.post('/spots', async(req, res) =>{
@@ -54,6 +57,14 @@ async function run() {
         res.send(result)
     })
 
+    // update data
+    app.get("/myProduct/:email", async (req, res)=>{
+      // console.log(req.params.email)
+      const myQuery = { userId: req.params.email };
+      console.log(myQuery);
+      const result = await spotsCollection.find(myQuery).toArray();
+      res.send(result);
+    })
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
