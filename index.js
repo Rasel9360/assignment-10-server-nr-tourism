@@ -66,6 +66,13 @@ async function run() {
       res.send(result);
     })
 
+    app.get("/singleSpot/:id", async  (req,res)=> {
+      // console.log(req.params.id);
+      const result = await spotsCollection.findOne({_id: new ObjectId(req.params.id)});
+      // console.log(result);
+      res.send(result);
+    })
+
     // delete data
     app.delete('/myProduct/:id', async (req,res) =>{
       const id = req.params.id;
@@ -74,6 +81,9 @@ async function run() {
       const result = await spotsCollection.deleteOne(query);
       res.send(result)
     })
+
+    // get single data
+    
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
