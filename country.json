@@ -1,0 +1,33 @@
+[
+    {
+      "country": "Bangladesh",
+      "image": "https://i.ibb.co/d25S0qv/bangladesh.jpg",
+      "description": "Bangladesh, located in South Asia, is known for its lush greenery, vibrant culture, and rich history. Explore the bustling streets of Dhaka, relax in the serene beauty of the Sundarbans mangrove forest, or visit ancient archaeological sites like the Paharpur Buddhist monastery."
+    },
+    {
+      "country": "Thailand",
+      "image": "https://i.ibb.co/ScL1Cxx/thailand.jpg",
+      "description": "Thailand, in Southeast Asia, is famous for its stunning beaches, ornate temples, and bustling street markets. Experience the vibrant nightlife of Bangkok, explore the historic ruins of Ayutthaya, or relax on the pristine islands of Phuket and Koh Samui."
+    },
+    {
+      "country": "Malaysia",
+      "image": "https://i.ibb.co/418cCZY/alaysian.jpg",
+      "description": "Malaysia, situated in Southeast Asia, offers a mix of modern cities, lush rainforests, and diverse cultural heritage. Discover the iconic Petronas Twin Towers in Kuala Lumpur, explore the colonial charm of Penang, or trek through the ancient rainforests of Taman Negara."
+    },
+    {
+      "country": "Indonesia",
+      "image": "https://i.ibb.co/G2jB1Mk/indodisil.jpg",
+      "description": "Indonesia, the largest archipelago in the world, is renowned for its stunning natural landscapes and rich cultural heritage. Visit the ancient temples of Borobudur and Prambanan in Java, explore the pristine beaches of Bali, or hike up the volcanic peaks of Mount Bromo and Mount Rinjani."
+    },
+    {
+      "country": "Vietnam",
+      "image": "https://i.ibb.co/vQF41cH/vitena.jpg",
+      "description": "Vietnam, located in Southeast Asia, boasts breathtaking landscapes, vibrant cities, and a rich history. Explore the bustling streets of Hanoi, cruise along the picturesque Halong Bay, or delve into the fascinating history of Ho Chi Minh City."
+    },
+    {
+      "country": "Cambodia",
+      "image": "https://i.ibb.co/fxQknwH/combodia.jpg",
+      "description": "Cambodia, home to the iconic Angkor Wat temple complex, offers a blend of ancient wonders and natural beauty. Discover the temples of Angkor, explore the vibrant capital city of Phnom Penh, or relax on the pristine beaches of Sihanoukville."
+    }
+  ]
+  

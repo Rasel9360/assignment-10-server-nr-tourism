@@ -31,6 +31,7 @@ async function run() {
     // await client.connect();
 
     const spotsCollection = client.db("spotsDB").collection("spots")
+    const countryCollection = client.db("spotsDB").collection("countryCollection");
 
     // send data
     app.get('/spots', async(req, res)=>{
@@ -73,6 +74,33 @@ async function run() {
       res.send(result);
     })
 
+    // update data
+    app.put("/updateSpot/:id", async (req, res) => {
+      console.log(req.params.id);
+      const data =  req.body;
+      console.log(data);
+      const query = {_id: new ObjectId(req.params.id)};
+      const updateData = {
+        $set:{
+          country: data.country,
+          name: data.name,
+          photo: data.photo, 
+          visitor: data.visitor, 
+          location: data.location, 
+          seasonality: data.seasonality, 
+          description: data.description, 
+          cost: data.cost, 
+          time: data.time, 
+          userName: data.userName, 
+          email: data.email
+        }
+      }
+      const options = { upsert: true };
+      const result = await spotsCollection.updateOne(query, updateData ,options);
+      console.log(result);
+      res.send(result)
+    })
+
     // delete data
     app.delete('/myProduct/:id', async (req,res) =>{
       const id = req.params.id;
@@ -82,7 +110,14 @@ async function run() {
       res.send(result)
     })
 
-    // get single data
+    // Country related data  --------------------------
+    app.get('/country', async(req, res)=>{
+      const curser = countryCollection.find();
+      const result = await curser.toArray()
+      res.send(result)
+    })
+
+  
     
 
     // Send a ping to confirm a successful connection
